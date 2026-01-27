@@ -44,7 +44,7 @@ export const timelineData = [
     },
 
     {year: 2006,
-    description: "'Marie-Antoniette'",
+    description: "'Marie-Antoinette'",
     img: "https://m.media-amazon.com/images/M/MV5BMmE4NzQzNGItNTY4My00ZTBhLTk2ZjItZDJkMjRlYTE2MGRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
     category: {
       type : "Film",
