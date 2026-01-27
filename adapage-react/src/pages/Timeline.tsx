@@ -1,16 +1,18 @@
 import { TimeLineItem } from "../components/TimelineItem";
 import { timelineData } from "../data";
 import '../App.css'
+import { Link } from "react-router";
 
 
 export default function Timeline() {
   return (
     <>
     <nav>
-      <button><Link to="/">Home</Link></button>
+      <button><Link to='/'>Home</Link></button>
       <button><Link to="/quotes">Citations</Link></button>
       <button><Link to="/timeline">Timeline</Link></button>
     </nav>
+
     <div>
       <h1>Timeline</h1>
       {timelineData. length > 0 && (
