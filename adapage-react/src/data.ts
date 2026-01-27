@@ -1,4 +1,4 @@
-const charac = [{
+export const charac = [{
     name: "Sofia Coppola",
     profession: "Film Director",
     age: 55,
@@ -10,68 +10,103 @@ const charac = [{
         `Marie Antoinette (2006)`]
 }]
 
-const timeLine = [
+export const timelineData = [
     {year: 1989,
     description: "New York Stories",
     img: "https://m.media-amazon.com/images/M/MV5BNTI0NTg4NjUwMF5BMl5BanBnXkFtZTYwNjg2NTc5._V1_.jpg",
-    type: "Film"},
+    category: {
+      type : "Film",
+      color: "#825C56"}
+    },
 
     {year: 1998,
     description: "Lick the Star",
     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWBtCWfBkAc_RT-pluH3XRTFCpr_wlUB3Dg&s",
-    type: "Film"},
+    category: {
+      type : "Film",
+      color: "#825C56"}
+    },
 
     {year: 1999,
     description: "The Virgin Suicides",
     img:"https://m.media-amazon.com/images/M/MV5BMmNhYTE5MjQtMzI2Ny00MDRhLWE4ZjAtYTg0YjNhNjZmMTVlXkEyXkFqcGc@._V1_.jpg",
-    type: "Film"},
+    category: {
+      type : "Film",
+      color: "#825C56"}
+    },
 
     {year: 2003,
     description: "Lost in Translation",
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVStOpSk8uQcFmBX583mYu0LmqdW0g8bW7zw&s",
-    type: "Film"},
+    category: {
+      type : "Film",
+      color: "#825C56"}
+    },
 
     {year: 2006,
     description: "'Marie-Antoniette'",
     img: "https://m.media-amazon.com/images/M/MV5BMmE4NzQzNGItNTY4My00ZTBhLTk2ZjItZDJkMjRlYTE2MGRiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
-    type: "Film"},
+    category: {
+      type : "Film",
+      color: "#825C56"}
+    },
 
     {year: 2005,
     description: `'César du meilleur film étranger' for 'Lost in translation'`,
     img: "https://fr.web.img6.acsta.net/c_310_420/medias/nmedia/18/35/15/97/18365406.jpg",
-    type: "Prize"},
+    category: {
+      type : "Prize",
+      color: "#533532"}
+    },
 
     {year: 2006,
     description: `'Festival de Cannes : Prix de l’Éducation Nationale du meilleur film'
     for 'Marie Antoinette'`,
     img: "https://fr.web.img6.acsta.net/c_310_420/medias/nmedia/18/36/20/98/18612764.jpg",
-    type: "Prize"},
+    category: {
+      type : "Prize",
+      color: "#533532"}
+    },
 
     {year: 2006,
     description: `Her daughter Romy Mars is born`,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7JXFcIO32u0_bhOxJAU7mWhaV4TGwp52bB6aegz9ZmKOr3VucEgQvA8JMKMYtn1dhD2TimvwQu27UVF_uUDPN8ERW6iSQbkBp8UJ3xw&s=10",
-    type: "Personal Life"},
+    category: {
+      type : "Personal Life",
+      color: "#6B606D"}
+    },
 
     {year: 2010,
     description: `'Venice film festival : Golden Lion' for 'Somewhere' `,
     img: "https://fr.web.img6.acsta.net/c_310_420/medias/nmedia/18/79/57/28/19584769.jpg",
-    type: "Prize"},
+    category: {
+      type : "Prize",
+      color: "#533532"}
+    },
 
     {year: 2010,
     description: `Her daughter Cosima Mars is born`,
     img: "https://www.instyle.com/thmb/OOXG86IHoO76V2doAamK9HaZwEc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-2224070791-4a36b3403aac4e89ad636be7c6c7fe49.jpeg",
-    type: "Personal Life"},
+    category: {
+      type : "Personal Life",
+      color: "#6B606D"}
+    },
     
     {year: 2011,
     description: `Married to Thomas Mars`,
     img: "https://people.com/thmb/CQcbFxraYmbuedLuT6i0wDg6ghI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(963x619:965x621)/sofia-coppola-thomas-mars-1-fcb16357835348959e34fce54cd6693f.jpg",
-    type: "Personal Life"},
+    category: {
+      type : "Personal Life",
+      color: "#6B606D"}
+    },
 
     {year: 2017,
     description: `'Festival de Cannes : Prix de la mise en scène" for 'The Beguiled`,
     img: "https://fr.web.img5.acsta.net/c_310_420/pictures/17/05/16/14/57/074483.jpg",
-    type: "Prize"},
-
+    category: {
+      type : "Prize",
+      color: "#533532"}
+    }
 ]
 
 export const quotes = [
