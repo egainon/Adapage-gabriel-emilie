@@ -6,11 +6,12 @@ export default function App() {
       <h1>Accueil - [Nom de ta personnalité]</h1>
       
       <nav>
+        <button><Link to="/">Home</Link></button>
         <button><Link to="/quotes">Citations</Link></button>
         <button><Link to="/timeline">Timeline</Link></button>
       </nav>
       
-      {/* Contenu de ta homepage */}
+    {/* contenu */}
     </div>
   );
 }
