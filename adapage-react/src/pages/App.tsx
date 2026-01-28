@@ -5,9 +5,8 @@ import { Footer } from '../components/footer';
 
 export default function App() {
   return (
+    <>
     <body>
-    <div className="min-h-screen bg-[#1a1a1a] flex flex-col">
-
       <Header/>
 
       <main className="grow">    
@@ -68,8 +67,7 @@ export default function App() {
       </main> 
     
     <Footer/>
-    
-    </div>
-    </body>
+  </body>
+  </>
   );
 }

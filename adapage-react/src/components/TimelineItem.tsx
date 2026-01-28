@@ -1,5 +1,5 @@
 import '../App.css'
-import {TimelineItemType} from '../interfaces';
+import type {TimelineItemType} from '../interfaces';
 
 interface TimelineItemProps {
     data: TimelineItemType;
