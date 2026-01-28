@@ -39,21 +39,21 @@ export default function App() {
 
                   <div className="grid grid-cols-1 gap-4 bg-[#533532] rounded-xl p-6 border border-[#825C56]">
                     <div className="flex items-center gap-3">
-                      <span className="text-[#966F66] font-bold text-sm uppercase tracking-wider">Country:</span>
+                      <span className="text-[#EDD8D4] font-young-serif font-bold text-sm uppercase tracking-wider">Country:</span>
                       <span className="text-[#EDD8D4] text-lg">{elem.country}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-[#966F66] font-bold text-sm uppercase tracking-wider">Astrologic sign:</span>
+                      <span className="text-[#] font-bold text-sm uppercase tracking-wider">Astrologic sign:</span>
                       <span className="text-[#EDD8D4] text-lg">{elem.AstroSign}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <span className="text-[#966F66] font-bold text-sm uppercase tracking-wider">Profession:</span>
+                      <span className="text-[#EDD8D4] font-bold text-sm uppercase tracking-wider">Profession:</span>
                       <span className="text-[#EDD8D4] text-lg">{elem.profession}</span>
                     </div>
                   </div>
 
                   <div className="bg-linear-to-br from-[#2a2a2a] to-[#1a1a1a] rounded-xl p-8 border border-[#6B606D] shadow-xl">
-                    <h2 className="text-[#966F66] font-bold text-xl uppercase tracking-wide mb-4">
+                    <h2 className="text-[#EDD8D4] font-bold text-xl uppercase tracking-wide mb-4">
                       About Sofia
                     </h2>
                     <p className="text-[#EDD8D4] leading-relaxed text-base md:text-lg">
