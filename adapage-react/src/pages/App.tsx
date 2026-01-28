@@ -5,6 +5,7 @@ import { charac } from "../data";
 
 export default function App() {
   return (
+    
     <>
   
     <header>
@@ -44,7 +45,7 @@ export default function App() {
   <div>
   {charac.map((elem) => (
   <div key={elem.id}>
-  <h1>{elem.name} ({elem.age})</h1>
+  <h1 className="font-monsieur text-5xl">{elem.name} ({elem.age})</h1>  <img src={elem.img} alt="Portrait of Sofia Coppola"/>
   <p>{elem.country}</p>
   <p>{elem.AstroSign}</p>
   <p>{elem.profession}</p>
