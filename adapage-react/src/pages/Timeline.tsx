@@ -1,11 +1,13 @@
 import { TimeLineItem } from "../components/TimelineItem";
 import { timelineData } from "../data";
 import '../App.css'
-import { Link } from "react-router";
 import { useEffect } from "react";
+import { Header } from "../components/Header";
+import { Footer } from "../components/footer";
 
 
 export default function Timeline() {
+
   useEffect(() => {
     // Intersection Observer para el efecto fade-in
     const observer = new IntersectionObserver(
@@ -35,13 +37,8 @@ export default function Timeline() {
   return (
     <>
     <body>
-      <header>
-        <nav>
-          <button><Link to='/'>Home</Link></button>
-          <button><Link to="/quotes">Citations</Link></button>
-          <button><Link to="/timeline">Timeline</Link></button>
-        </nav>
-      </header>
+
+    <Header/>
 
       <main>
         <div>
@@ -55,12 +52,8 @@ export default function Timeline() {
         </div>
       </main>
 
-      <footer className="bg-[#533532] text-white py-6 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">© 2026 - Projet Sofia Coppola - Gabriel Hono & Emilie Gainon
-          </p>
-        </div>
-      </footer>
+    <Footer/>
+
     </body>
     </>
   );

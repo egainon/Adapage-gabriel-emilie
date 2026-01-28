@@ -1,47 +1,14 @@
-import { Link } from "react-router";
 import '../App.css'
-import logoSofia from '../images/Logo-Sofia.png';
 import { charac } from "../data";
+import { Header } from "../components/Header";
+import { Footer } from '../components/footer';
 
 export default function App() {
   return (
+    <body>
     <div className="min-h-screen bg-[#1a1a1a] flex flex-col">
-      <header>
-        <nav className="bg-[#533532] shadow-lg" role="navigation" aria-label="Navigation principale">
-          <div className="container mx-auto px-6 py-4">
-            <div className="flex items-center justify-between">
-              <Link to="/" className="group" aria-label="Retour à l'accueil">
-                <img 
-                  src={logoSofia} 
-                  alt="Logo Sofia Coppola" 
-                  className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
-                />
-              </Link>
-              
-              <div className="flex gap-4">
-                <Link 
-                  to="/quotes" 
-                  className="bg-[#825C56] text-[#EDD8D4] px-8 py-3 rounded-lg font-semibold 
-                           hover:bg-[#966F66] hover:shadow-lg transform hover:-translate-y-0.5 
-                           transition-all duration-300 focus:outline-none focus:ring-2 
-                           focus:ring-[#EDD8D4] focus:ring-offset-2 focus:ring-offset-[#533532]"
-                >
-                  Citations
-                </Link>
-                <Link 
-                  to="/timeline" 
-                  className="bg-[#966F66] text-[#EDD8D4] px-8 py-3 rounded-lg font-semibold 
-                           hover:bg-[#825C56] hover:shadow-lg transform hover:-translate-y-0.5 
-                           transition-all duration-300 focus:outline-none focus:ring-2 
-                           focus:ring-[#EDD8D4] focus:ring-offset-2 focus:ring-offset-[#533532]"
-                >
-                  Timeline
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+
+      <Header/>
 
       <main className="grow">    
         <div className="container mx-auto px-6 py-16">
@@ -99,15 +66,10 @@ export default function App() {
           ))}
         </div>
       </main> 
-
-      <footer className="bg-[#533532] text-[#EDD8D4] py-8 mt-auto border-t-2 border-[#825C56]">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-sm">
-            © 2026 - Projet Sofia Coppola - 
-            <span className="text-[#966F66] font-semibold"> Gabriel Hono & Emilie Gainon</span>
-          </p>
-        </div>
-      </footer>
+    
+    <Footer/>
+    
     </div>
+    </body>
   );
 }

@@ -1,48 +1,17 @@
-import { Link } from "react-router";
 import { quotes } from "../data";
-import logoSofia from '../images/Logo-Sofia.png';
-import Footer from '../components/footer';
-import { Quote } from '../interfaces';
+import type { Quote } from '../interfaces';
+import { Header } from "../components/Header";
+import { Footer } from "../components/footer";
 
 
 export default function Quotes() {
   return (
     <>
+    <body>
     <div className="min-h-screen bg-[#EDD8D4]">
-      <header>
-      {/* Navigation */}
-      <nav className="bg-[#533532] shadow-md" role="navigation" aria-label="Navigation principale">
-  <div className="container mx-auto px-4 py-4">
-    <div className="flex items-center justify-between flex-wrap">
-      <Link to="/" className="" aria-label="Retour à l'accueil">
-        <img 
-          src={logoSofia} 
-          alt="Retour à l'accueil" 
-          className="h-12 w-auto hover:opacity-80 transition-opacity cursor-pointer"
-        />
-      </Link>
       
-      <div className="flex gap-4">
-        <Link 
-          to="/quotes" 
-          className="bg-[#825C56] text-[#EDD8D4] px-6 py-2 rounded-lg hover:bg-[#966F66] transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#533532]"
-          aria-current="page"
-        >
-          Quotes
-        </Link>
-        <Link 
-          to="/timeline" 
-          className="bg-[#966F66] text-[#EDD8D4] px-6 py-2 rounded-lg hover:bg-[#825C56] transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#533532]"
-        >
-          Timeline
-        </Link>
-      </div>
-    </div>
-  </div>
-</nav>
-</header>
+    <Header/>
 
-      {/* Contenu principal */}
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-5xl font-bold text-[#533532] mb-12 text-center">
           Sofia Coppola's quotes
@@ -74,8 +43,10 @@ export default function Quotes() {
         </div>
       </main>
 
- <Footer />
+    <Footer/>
+
     </div>
+    </body>
     </>
   );
 }
