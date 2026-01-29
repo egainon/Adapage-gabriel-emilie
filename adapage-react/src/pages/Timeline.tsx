@@ -37,11 +37,13 @@ export default function Timeline() {
   return (
    
 <body>
-    <Header/>
+<Header/>
+   <div className="min-h-screen bg-[#EDD8D4]">
+    
 
-      <main>
+      <main className="container mx-auto px-4 py-12">
         <div>
-          <h1>Timeline</h1>
+        <h1 className="font-young-serif text-5xl font-bold text-[#533532] mb-12 text-center">Timeline</h1>
           {timelineData.length > 0 && (
             <div className="timeline-container">
               {timelineData.map((data, idx) => <TimeLineItem data={data} key={idx} />
@@ -51,7 +53,10 @@ export default function Timeline() {
         </div>
       </main>
 
-    <Footer/>
+ 
+
+  </div> 
+  <Footer/>
 </body>
    
   );

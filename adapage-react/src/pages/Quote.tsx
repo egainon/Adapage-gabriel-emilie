@@ -13,7 +13,7 @@ export default function Quotes() {
     <Header/>
 
       <main className="container mx-auto px-4 py-12">
-        <h1 className="text-5xl font-bold text-[#533532] mb-12 text-center">
+        <h1 className="font-young-serif text-5xl font-bold text-[#533532] mb-12 text-center">
           Sofia Coppola's quotes
         </h1>
         
@@ -43,7 +43,7 @@ export default function Quotes() {
         </div>
       </main>
 
-    <Footer/>
+ <Footer/>
 
     </div>
     </body>

@@ -14,33 +14,41 @@
   --color-accent: #6B606D;
 }
 
+/* MODIFICATION IMPORTANTE: Retirer les contraintes de largeur */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-
+/* ========================================
+   TIMELINE CONTAINER - VERSION DESKTOP
+   ======================================== */
 .timeline-container {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 40px 0;
+  margin: 40px auto;
+  max-width: 1200px; /* Centrer le contenu de la timeline */
+  padding: 0 20px;
 }
 
-/* Línea central - z-index bajo para que los círculos queden encima */
+/* Ligne centrale */
 .timeline-container::after {
-  background-color: var(--color-primary);
+  background-color: var(--color-dark);
   content: "";
   position: absolute;
-  left: calc(50% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  z-index: 1;  /* Línea debajo de los círculos */
+  z-index: 1;
 }
 
-/* Animación fade-in */
+/* ========================================
+   ANIMATIONS
+   ======================================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -52,6 +60,9 @@
   }
 }
 
+/* ========================================
+   TIMELINE ITEMS - VERSION DESKTOP
+   ======================================== */
 .timeline-item {
   display: flex;
   justify-content: flex-end;
@@ -59,17 +70,15 @@
   position: relative;
   margin: 25px 0;
   width: 50%;
-  
-  /* Estado inicial: invisible */
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* Clase que se agrega con JavaScript cuando el item es visible */
 .timeline-item.visible {
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* Items impairs - côté gauche */
 .timeline-item:nth-child(odd) {
   align-self: flex-end;
   justify-content: flex-start;
@@ -77,179 +86,178 @@
   padding-right: 0;
 }
 
-/* Cuadro contenedor principal - ANCHO FIJO */
+/* ========================================
+   TIMELINE ITEM CONTENT
+   ======================================== */
 .timeline-item-content {
-    box-shadow: 0 4px 12px rgba(83, 53, 50, 0.15);
-    border-radius: 12px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 18px 20px;
-    position: relative;
-    width: 25vw;
-    min-width: 280px;
-    max-width: 400px;
-    border: 2px solid var(--color-primary);
-    gap: 14px;
-    
-    /* Transición suave para el hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(83, 53, 50, 0.15);
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid var(--color-primary);
+  gap: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto hover: levantarse levemente */
 .timeline-item-content:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(83, 53, 50, 0.25);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(83, 53, 50, 0.25);
 }
 
-/* Header: Tag y Año en la misma línea */
+/* ========================================
+   HEADER: Tag et Année
+   ======================================== */
 .timeline-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
-/* Tag de tipo */
 .timeline-item-content .type {
-    color: #fff;
-    font-size: 10px;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    padding: 6px 12px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background-color: var(--color-secondary);
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: var(--color-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
 }
 
-/* Efecto sutil en el tag al hacer hover en el cuadro */
 .timeline-item-content:hover .type {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Año */
 .timeline-item-content time {
-    color: var(--color-accent);
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
-    flex-shrink: 0;
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-/* Body: Imagen y Descripción */
+/* ========================================
+   BODY: Image et Description
+   ======================================== */
 .timeline-body {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    min-height: 100px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-height: 100px;
 }
 
-/* Imagen - tamaño fijo */
 .timeline-body img {
-    width: 100px;
-    min-width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 8px;
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+  width: 100px;
+  min-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Efecto sutil en la imagen al hacer hover */
 .timeline-item-content:hover .timeline-body img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-/* Descripción en negrita, máximo 3 líneas */
 .timeline-body h2 {
-    font-size: 14px;
-    line-height: 1.45;
-    margin: 0;
-    color: var(--color-dark);
-    font-weight: 700;
-    text-align: left;
-    flex: 1;
-    
-    /* Limitar a 3 líneas */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+  color: var(--color-dark);
+  font-weight: 700;
+  text-align: left;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Flecha del cuadro */
+/* ========================================
+   FLÈCHE DU CUADRO
+   ======================================== */
 .timeline-item-content::after {
-    content: ' ';
-    background-color: #fff;
-    box-shadow: 2px -2px 3px rgba(83, 53, 50, 0.1);
-    position: absolute;
-    right: -10px;
-    top: calc(50% - 10px);
-    transform: rotate(45deg);
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid var(--color-primary);
-    border-top: 2px solid var(--color-primary);
-    transition: box-shadow 0.3s ease;
-    z-index: 2;  /* Flecha por encima de la línea */
+  content: ' ';
+  background-color: #fff;
+  box-shadow: 2px -2px 3px rgba(83, 53, 50, 0.1);
+  position: absolute;
+  right: -10px;
+  top: calc(50% - 10px);
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--color-primary);
+  border-top: 2px solid var(--color-primary);
+  transition: box-shadow 0.3s ease;
+  z-index: 2;
 }
 
-/* Items impares (lado izquierdo) */
+/* Items impairs - flèche à gauche */
 .timeline-item:nth-child(odd) .timeline-body {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .timeline-item:nth-child(odd) .timeline-body h2 {
-    text-align: right;
+  text-align: right;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content::after {
-    right: auto;
-    left: -10px;
-    box-shadow: -2px 2px 3px rgba(83, 53, 50, 0.1);
-    border-right: none;
-    border-top: none;
-    border-left: 2px solid var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
+  right: auto;
+  left: -10px;
+  box-shadow: -2px 2px 3px rgba(83, 53, 50, 0.1);
+  border-right: none;
+  border-top: none;
+  border-left: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
 }
 
-/* Círculo en la línea de tiempo - ENCIMA de la línea */
+/* ========================================
+   CERCLE SUR LA LIGNE
+   ======================================== */
 .timeline-item-content .circle {
-    background-color: var(--color-tertiary);
-    border: 4px solid #fff;
-    box-shadow: 0 0 0 2px var(--color-secondary);
-    border-radius: 50%;
-    position: absolute;
-    top: calc(50% - 12px);
-    right: -42px;
-    width: 24px;
-    height: 24px;
-    z-index: 10;  /* Círculo por encima de todo */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--color-tertiary);
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px var(--color-secondary);
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: -42px;
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto en el círculo al hacer hover */
 .timeline-item-content:hover .circle {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 3px var(--color-secondary), 0 0 10px rgba(150, 111, 102, 0.4);
-    z-index: 11;  /* Aún más arriba al hacer hover */
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px var(--color-secondary), 0 0 10px rgba(150, 111, 102, 0.4);
+  z-index: 11;
 }
 
 .timeline-item:nth-child(odd) .timeline-item-content .circle {
-    right: auto;
-    left: -42px;
+  right: auto;
+  left: -42px;
 }
 
-/* Delay escalonado para animación fade-in */
+/* ========================================
+   ANIMATION DELAYS
+   ======================================== */
 .timeline-item:nth-child(1).visible { animation-delay: 0.1s; }
 .timeline-item:nth-child(2).visible { animation-delay: 0.2s; }
 .timeline-item:nth-child(3).visible { animation-delay: 0.3s; }
@@ -257,37 +265,118 @@
 .timeline-item:nth-child(5).visible { animation-delay: 0.5s; }
 .timeline-item:nth-child(n+6).visible { animation-delay: 0s; }
 
-/* Responsive */
+/* ========================================
+   RESPONSIVE - TABLETTE
+   ======================================== */
 @media (max-width: 1024px) {
-    .timeline-item-content {
-        width: 35vw;
-        min-width: 260px;
-    }
+  .timeline-item-content {
+    max-width: 350px;
+  }
 }
 
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
 @media (max-width: 768px) {
-    .timeline-item,
-    .timeline-item:nth-child(odd) {
-        width: 100%;
-        padding: 0 20px;
-    }
-    
-    .timeline-item-content {
-        width: calc(100% - 40px);
-        max-width: 100%;
-    }
-    
-    .timeline-body {
-        flex-direction: column !important;
-    }
-    
-    .timeline-body img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .timeline-item:nth-child(odd) .timeline-body h2 {
-        text-align: left;
-    }
+  .timeline-container {
+    padding: 0 10px;
+  }
+
+  /* Ligne centrale pour mobile */
+  .timeline-container::after {
+    left: 30px;
+    transform: none;
+  }
+
+  /* Tous les items alignés à gauche */
+  .timeline-item,
+  .timeline-item:nth-child(odd) {
+    width: 100%;
+    align-self: flex-start;
+    justify-content: flex-start;
+    padding-left: 60px;
+    padding-right: 0;
+    margin: 20px 0;
+  }
+
+  /* Contenu des items */
+  .timeline-item-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  /* Body en colonne pour mobile */
+  .timeline-body {
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+
+  .timeline-body img {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+    height: 200px;
+  }
+
+  /* Texte aligné à gauche pour tous */
+  .timeline-body h2,
+  .timeline-item:nth-child(odd) .timeline-body h2 {
+    text-align: left;
+  }
+
+  /* Flèche toujours à gauche en mobile */
+  .timeline-item-content::after,
+  .timeline-item:nth-child(odd) .timeline-item-content::after {
+    right: auto;
+    left: -10px;
+    box-shadow: -2px 2px 3px rgba(83, 53, 50, 0.1);
+    border-right: none;
+    border-top: none;
+    border-left: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
+
+  /* Cercle toujours à gauche en mobile */
+  .timeline-item-content .circle,
+  .timeline-item:nth-child(odd) .timeline-item-content .circle {
+    right: auto;
+    left: -42px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - TRÈS PETIT MOBILE
+   ======================================== */
+@media (max-width: 480px) {
+  .timeline-container {
+    padding: 0 5px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd) {
+    padding-left: 50px;
+  }
+
+  .timeline-item-content {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .timeline-body img {
+    height: 150px;
+  }
+
+  .timeline-body h2 {
+    font-size: 13px;
+  }
+
+  .timeline-item-content .type {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .timeline-item-content time {
+    font-size: 12px;
+  }
 }

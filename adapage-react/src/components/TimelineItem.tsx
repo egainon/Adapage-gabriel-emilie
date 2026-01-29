@@ -1,5 +1,5 @@
 import '../App.css'
-import type {TimelineItemType} from '../interfaces';
+import type {TimelineItemData} from '../interfaces';
 
 
 export const TimeLineItem = ({ data }: { data: TimelineItemData }) =>  (
