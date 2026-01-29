@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import type { Character } from '../interfaces';
 import { Footer } from '../components/footer';
 
+
 export default function App() {
   return (
     <>
@@ -30,8 +31,9 @@ export default function App() {
                     <img 
                       src={elem.img} 
                       alt={`Portrait of ${elem.name}`}
-                      className="relative rounded-xl shadow-2xl w-full h-[350px] md:h-[400px] lg:h-[450px] object-contain"
+                      className="relative rounded-xl shadow-2xl w-full h-87.5 md:h-100 lg:h-112.5 object-cover"
                     />
+                
                   </div>
                   
                   {/* INFORMATIONS */}
