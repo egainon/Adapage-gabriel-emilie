@@ -14,6 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mode sombre pour App.css */
+.dark {
+  color-scheme: dark;
+  color: #EDD8D4;
+  background-color: #2a1f1d;
+}
+
 a {
   font-weight: 700;
   color: #EDD8D4;
@@ -23,12 +30,17 @@ a:hover {
   color: #533532;
 }
 
+.dark a:hover {
+  color: #966F66;
+}
+
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -47,6 +59,12 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+.dark button {
+  background-color: #3d2e2b;
+  color: #EDD8D4;
+}
+
 button:hover {
   border-color: #646cff;
 }
