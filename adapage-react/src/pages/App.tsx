@@ -3,7 +3,6 @@ import { charac } from "../data";
 import { Header } from "../components/Header";
 import type { Character } from '../interfaces';
 import { Footer } from '../components/footer';
-import { ThemeToggle } from '../components/ThemeToggle';
 import { formatTitle } from '../components/FormatTitleFilm';
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
     <>
       <div className='min-h-screen bg-[#EDD8D4] dark:bg-[#2a1f1d] transition-colors duration-300'>
         <Header/>
-        <ThemeToggle/>
         <main className="grow">    
           <div className="container mx-auto px-6 py-8">
             {charac.map((elem: Character) => (
