@@ -1,6 +1,6 @@
 import { Footer } from '../components/footer';
 import { Header } from '../components/Header';
-import page404 from '../images/page-404.png';
+
 
 export default function NotFound() {
     return (
@@ -8,7 +8,7 @@ export default function NotFound() {
             <div className='min-h-screen bg-[#EDD8D4] flex flex-col'>
                 <Header/>
                 
-                <main className="flex-grow flex items-center justify-center py-12 px-6">
+                <main className="grow flex items-center justify-center py-12 px-6">
                     <div className="max-w-6xl mx-auto">
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             
