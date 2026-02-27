@@ -67,14 +67,14 @@ Le design s’inspire de l’esthétique cinématographique de Sofia Coppola :
 - Développer une approche “projet éditorial” en React
 
 ### Installation
-1️⃣ Cloner le projet
+- 1️⃣ Cloner le projet
 git clone https://github.com/ton-username/adapage.git
 cd adapage
-2️⃣ Installer les dépendances
+- 2️⃣ Installer les dépendances
 npm install
-3️⃣ Lancer le projet
+- 3️⃣ Lancer le projet
 npm run dev
-🏗️ Architecture
+- 🏗️ Architecture
 src/
  ├── components/
  ├── pages/
